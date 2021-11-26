@@ -24,7 +24,7 @@ public class Main {
             }
             System.out.println(max);
             System.out.println(index+1);
-
+            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

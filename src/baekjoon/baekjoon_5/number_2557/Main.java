@@ -9,17 +9,22 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         try{
-            int A = Integer.parseInt(br.readLine());
-            int B = Integer.parseInt(br.readLine());
-            int C = Integer.parseInt(br.readLine());
+            int input = Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine()) * Integer.parseInt(br.readLine());
 
-            int result = A * B * C;
+            String str = String.valueOf(input);
 
             int[] arr = new int[10];
 
-            for (int i = 0; i <= 9; i++) {
-
+            for (int i = 0; i < str.length(); i++) {
+                arr[(str.charAt(i) - '0')]++;
             }
+
+            for (int result : arr) {
+                System.out.println(result);
+            }
+
+            br.close();
+
         }catch (IOException e){
             e.printStackTrace();
         }

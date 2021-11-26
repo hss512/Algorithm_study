@@ -20,6 +20,9 @@ public class Main {
                 second = number%10;
             }
             System.out.println(count);
+
+            br.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

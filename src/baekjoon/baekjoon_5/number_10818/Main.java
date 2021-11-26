@@ -25,6 +25,8 @@ public class Main {
 
             System.out.println(arr[0] + " " + arr[N-1]);
 
+            br.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
