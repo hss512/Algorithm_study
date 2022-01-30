@@ -1,8 +1,7 @@
 package inflearn.section_1;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.Scanner;
 
 public class N_11 {
 
@@ -15,41 +14,65 @@ public class N_11 {
 
     private static String solution(char[] input) {
 
-        int[] count = new int[input.length];
-        char[] charArray = new char[input.length];
+        int cnt = 1;
 
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < input.length; i++) {
-            for (int j = i; j < input.length; j++) {
-                if(input[i] == input[j]){
-                    count[i]++;
-                }else{
-                    i = j-1;
-                    break;
+            if(i == input.length-1) {
+                if(cnt == 1){
+                    sb.append(input[i]);
+                }else {
+                    sb.append(input[i]).append(cnt);
                 }
-                charArray[i] = input[i];
+                break;
+            }
+            if(input[i] == input[i+1]){
+                cnt++;
+            }else{
+                if(cnt == 1){
+                    sb.append(input[i]);
+                }else {
+                    sb.append(input[i]).append(cnt);
+                    cnt = 1;
+                }
             }
         }
-
-        for (int i = 0; i < charArray.length; i++) {
-            if(Character.isAlphabetic(charArray[i])){
-                sb.append(charArray[i]);
-            }
-            if(count[i]>1){
-                sb.append(count[i]);
-            }
-        }
-
-        for (char value : charArray) {
-            System.out.print(value);
-        }
-        System.out.println();
-        for (int num : count) {
-            System.out.print(num);
-        }
-
-        System.out.println();
         return sb.toString();
     }
 }
+
+// 강사님 방식
+
+/*
+class N_11 {
+
+    public static void main(String[] args) throws IOException {
+
+        Scanner sc = new Scanner(System.in);
+        String input = sc.next();
+        System.out.print(solution(input));
+    }
+
+    private static String solution(String input) {
+
+        int cnt = 1;
+        input = input + " ";
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < input.length()-1; i++) {
+            if(input.charAt(i) == input.charAt(i+1))
+                cnt++;
+            else{
+                sb.append(input.charAt(i));
+                if(cnt > 1){
+                    sb.append(cnt);
+                }
+                cnt = 1;
+            }
+        }
+
+        return sb.toString();
+    }
+}*/
