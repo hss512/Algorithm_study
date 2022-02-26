@@ -20,33 +20,24 @@ public class N_11 {
 
     private static int solution(int[][] arr, int n) {
 
-        int[] resultArr = new int[n];
-        int cnt = 0, max =0;
+        int answer = 0, max =0;
 
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < 5; j++) {
-                for (int k = 0; k < n; k++) {
-                    if(k == i) continue;
-                    if(arr[i][j] == arr[k][j]){
-                        resultArr[i]++;
+            int cnt = 0;
+            for (int j = 0; j < n; j++) {
+                for (int k = 0; k < 5; k++) {
+                    if(arr[i][k] == arr[j][k]){
+                        cnt++;
                         break;
                     }
                 }
             }
-        }
-
-        for (int i = 0; i < n; i++) {
-            if(resultArr[i] > max){
-                max = resultArr[i];
-                cnt = i;
+            if(cnt > max){
+                max = cnt;
+                answer = i;
             }
         }
 
-        for (int i : resultArr) {
-            System.out.println(i);
-        }
-
-        System.out.println("==========");
-        return cnt+1;
+        return answer + 1;
     }
 }
