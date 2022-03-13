@@ -1,8 +1,6 @@
 package inflearn.section_3;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 public class N_2 {
 
@@ -27,7 +25,29 @@ public class N_2 {
         }
     }
 
-    private static ArrayList<Integer> solution(int n, int[] nArr, int m, int[] mArr) {
+    private static ArrayList<Integer> solution(int n, int[] a, int m, int[] b) {
+
+        ArrayList<Integer> result = new ArrayList<>();
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int p1 = 0, p2 = 0;
+        while(p1<n && p2<m){
+            if(a[p1] == b[p2]){
+                result.add(a[p1++]);
+                p2++;
+            }
+            else if(a[p1] < b[p2]) p1++;
+            else p2++;
+        }
+        return result;
+    }
+}
+
+// 내 solution
+
+/*
+private static ArrayList<Integer> solution(int n, int[] nArr, int m, int[] mArr) {
 
         ArrayList<Integer> result = new ArrayList<>();
 
@@ -43,26 +63,4 @@ public class N_2 {
 
         return result;
     }
-}
-
-// 이중 for문 보다 좋은 방법
-
-/*
-
-ArrayList<Integer> result = new ArrayList<>();
-
-Array.sort(a);
-Array.sort(b);
-int p1 = 0, p2 = 0;
-while(p1<n && p2<m){
-    if(a[p1] == b[p2]){
-        result.add(a[p1++]);
-        p2++;
-        }
-        else if(a[p1] < b[p2]) p++;
-        else p2++;
-    }
-    return result;
-}
-
  */
