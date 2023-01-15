@@ -24,5 +24,6 @@ public class N_1924 {
 		}
 		
 		System.out.println(dayOfTheWeeks[totalDays % 7]);
+		
 	}
 }
