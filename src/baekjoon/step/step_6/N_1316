@@ -35,7 +35,7 @@ public class N_1316 {
 					check[index] = true; 
 				}
 			}
-			if(tmp) cnt++;
+			if(tmp) cnt++; 
 		}
 		
 		System.out.println(cnt);
