@@ -36,7 +36,7 @@ public class N_1316 {
 				}
 			}
 			if(tmp) cnt++; 
-		}
+		} 
 		
 		System.out.println(cnt);
 	}
