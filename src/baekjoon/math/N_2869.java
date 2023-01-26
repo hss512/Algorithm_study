@@ -1,21 +1,26 @@
 package baekjoon.math;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class N_2869 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Scanner sc = new Scanner(System.in);
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-        int A = sc.nextInt();
+        StringTokenizer st = new StringTokenizer(bf.readLine());
 
-        int B = sc.nextInt();
+        int A = Integer.parseInt(st.nextToken());
 
-        int V = sc.nextInt();
+        int B = Integer.parseInt(st.nextToken());
 
-        int result = (V - B) / (A - B);
+        int V = Integer.parseInt(st.nextToken());
 
-        if((V - B) % (A - B) !=0 ){
+        int result = (V - B)/(A - B);
+
+        if((V - B)%(A - B) != 0){
             result++;
         }
 
