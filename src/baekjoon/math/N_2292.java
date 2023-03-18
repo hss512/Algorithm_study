@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class N_2292 {
     public static void main(String[] args) {
  
-	Scanner in = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
  
-	int N = in.nextInt();
+	int N = sc.nextInt();
         
 	int count = 1;
         
