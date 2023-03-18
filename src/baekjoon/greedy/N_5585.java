@@ -1,3 +1,5 @@
+package baekjoon.greedy;
+
 import java.util.Scanner;
  
 public class N_5585 {
