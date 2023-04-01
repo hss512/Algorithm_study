@@ -1,3 +1,5 @@
+package baekjoon.bruteForce;
+
 import java.util.Scanner;
 
 public class N_3040 {
