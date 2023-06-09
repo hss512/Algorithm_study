@@ -3,19 +3,17 @@ package baekjoon.math;
 import java.util.Scanner;
 
 public class N_2908 {
- 
-	public static void main(String[] args) {
- 
-		Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+            
+	int a = sc.nextInt();
+    
+        int b = sc.nextInt();
         
-		int a = sc.nextInt();
+        a = Integer.parseInt(new StringBuilder().append(a).reverse().toString());
     
-		int b = sc.nextInt();
-        
-		a = Integer.parseInt(new StringBuilder().append(a).reverse().toString());
-    
-		b = Integer.parseInt(new StringBuilder().append(b).reverse().toString());
-    
-    System.out.print(Math.max(a,b));
+        b = Integer.parseInt(new StringBuilder().append(b).reverse().toString());
+    	    
+	System.out.print(Math.max(a,b));
     }
 }
